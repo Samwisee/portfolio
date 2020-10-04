@@ -13,7 +13,7 @@
 
       nav {
         background-color: #161616;
-        height: 20vh;
+        height: 30vh;
       }
 
       h1 {
@@ -22,69 +22,130 @@
         font-family: sans-serif;
       }
 
-      .frame {
-        display: grid;
-        background-color: white;
-        width: 500px;
-        margin: auto;
-        grid-template-columns: 1fr 1fr;
-        border: 8px solid white;
-      }
-
       .box {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .box:hover{
+        background-color: white;
+      }
+
+      #weather-or-not{
+        grid-column: span 2;
+        background-image: url('./images/weather-or-not.png');
+        background-size: cover;
         height: 200px;
-        border: 8px solid white;
+        width: 60%;
+        transition: ease 0.5s;
       }
 
-      #box-1 {
-        background-color: #3766A2;
+      #weather-or-not:hover{
+        opacity: 0.1;
+        transition: ease 0.5s;
       }
 
-      #box-2 {
-        background-color: rgb(0, 128, 117);
+      #weather-or-not::after {
+        content: "Your text here";
       }
 
-      #box-3 {
-        background-color: green;
+      #MHS {
+        background-image: url("images/MHS.png");
+        background-size: cover;
+        height: 200px;
+        width: 40%;
+        transition: ease 0.5s;
+
       }
 
-      #box-4 {
-        background-color: gray;
+      #MHS:hover {
+        opacity: 0.05;
+        transition: ease 0.5s;
       }
 
+      #project-flynn {
+        flex-grow: 1;
+        width: 30%;
+      }
+
+      #about-me {
+        width: 30%;
+      }
+
+      #linkedin {
+        width: 30%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: ease 0.5s;
+
+      }
+
+      img:hover {
+        opacity: 0.8;
+        transition: ease 0.5s;
+      }
+
+      a {
+        border: 5px white solid;
+        
+      }
+
+      .container {
+        width: 800px;
+        position: relative;
+        top: -200px;
+        margin: auto;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .frame {
+        background-color: white;
+        border: 8px white solid;
+      }
 
     </style>
 
   </head>
   <body>
     <nav>
-      <h1>Sam <b>Cheney</b></h1>
+      
     </nav>
 
-    <div style="background-color: #3766A2; height: 80vh">
-      <div class="frame">
+    <div style="background-color: #3766A2; height: 70vh">
+      <div class="container">
+        <div class="row" style="background-color: transparent; border: none; margin-bottom: 80px;">
+          <h1>Sam <b>Cheney</b></h1>
+        </div>
+        <div class="frame row">
 
-        <div id="Weather or Not">
-          <a href="https://www.weatherornot.today">
-            <div id="box-1" class="box"></div>
+          <a class="box row-1" id="weather-or-not" href="https://www.weatherornot.today" target="_blank">
+          </a>
+
+          <a class="box row-1" id="MHS" href="#">
+            <div class="overlay"></div>
           </a>
         </div>
 
-        <div id="My Health Space">
-          <a href="#">
-            <div id="box-2" class="box"></div>
+        <div class="frame row">
+          <a class="box row-2" id="project-flynn" href="https://flynncheney.com/" target="_blank">
+            <img src="images/project-nephew.png" />
           </a>
-        </div>
 
-        <div id="Project Flynn">
-          <a href="https://www.flynncheney.com">
-            <div id="box-3" class="box"></div>
-          </a>
-        </div>
+          <a class="box" id="about-me" href="#" target="_blank">
+            <img src="images/sam-main.jpg" />
+          </a >
 
-        <div id="About me">
-          <a href="https://www.flynncheney.com">
-            <div id="box-4" class="box"></div>
+          <a class="box" id="linkedin" href="#" target="_blank">
+            <img src="images/linkedin.png" />
           </a>
         </div>
 
