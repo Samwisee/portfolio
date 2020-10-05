@@ -111,8 +111,8 @@
     </style>
 
     <script> Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
-      console.log('images finished loading');
-  });</script>
+      console.log('images finished loading');});
+    </script>
 
   </head>
   <body>
@@ -129,7 +129,7 @@
           
 
           <a class="box" id="weather-or-not" href="https://www.weatherornot.today" target="_blank">
-            <p style="position: absolute;">This is my final project for Le Wagon. I led a team to produce a weather personalised weather app. </p>
+            <p style="position: absolute;">This is my final project for Le Wagon. I led a team to produce a personalised weather app. </p>
             <img src="images/weather-or-not.png" style="z-index: 10" style="height: 100%" />
           </a>
 
