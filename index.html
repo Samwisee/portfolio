@@ -20,19 +20,16 @@
 
       #weather-or-not{
         grid-column: span 3;
-        background-image: url('./images/weather-or-not.png');
+        /* background-image: url('./images/weather-or-not.png'); */
         background-size: contain;
         background-repeat: no-repeat;
-        height: 0;
-        padding-top: 50%;
         width: 100%;
         transition: ease 0.5s;
         color: red;
       }
 
       #weather-or-not:hover{
-        opacity: 0.1;
-        transition: ease 0.5s;
+       
       }
 
       #MHS {
@@ -54,11 +51,10 @@
         height: 100%;
         object-fit: contain;
         transition: ease 0.5s;
-
       }
 
       img:hover {
-        opacity: 0.8;
+        opacity: 0.3;
         transition: ease 0.5s;
       }
 
@@ -89,6 +85,11 @@
         margin: 0;
       }
 
+      a {
+        height: 100%;
+        overflow: visible;
+      }
+
     </style>
 
   </head>
@@ -99,17 +100,21 @@
     <div style="background-color: #3766A2; height: 100%; margin-top: 10px;">
       <div class="container grid-container">
         <div class="row" style="background-color: transparent; border: none;">
-              <p style="color: white; font-family: Arial, Helvetica, sans-serif; font-size: 50px"><b>Sam </b>Cheney</p>
-              <p style="color: white; font-family: Arial, Helvetica, sans-serif;">_________Fullstack engineer</p>
+          <p style="color: white; font-family: Arial, Helvetica, sans-serif; font-size: 50px"><b>Sam </b>Cheney</p>
+          <p style="color: white; font-family: Arial, Helvetica, sans-serif; position: relative; left: 9px">________  Fullstack engineer</p>
         </div>
         <div class="frame row" style="margin-top: 10px;">
           
+
           <a class="box row-1" id="weather-or-not" href="https://www.weatherornot.today" target="_blank">
+            <p style="position: absolute; z-index: 0; opacity: 0;">Hello there</p>
+            <img src="images/weather-or-not.png" style="z-index: 10" style="height: 100%" />
           </a>
 
           <a class="box row-1" id="MHS" href="#">
-            <div class="overlay"></div>
+            <div></div>
           </a>
+
           <a class="box row-2" id="project-flynn" href="https://flynncheney.com/" target="_blank" >
             <img src="images/project-nephew.png" style="border-radius: 15px;" />
           </a>
