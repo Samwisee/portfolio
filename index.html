@@ -21,11 +21,8 @@
       #weather-or-not{
         grid-column: span 3;
         /* background-image: url('./images/weather-or-not.png'); */
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 100%;
+       
         transition: ease 0.5s;
-        color: red;
       }
 
       #weather-or-not:hover{
@@ -33,17 +30,11 @@
       }
 
       #MHS {
-        background-image: url("images/MHS.png");
-        background-size: cover;
-        height: 0;
-        padding-top: 60%;
         transition: ease 0.5s;
         grid-column: span 3;
       }
 
       #MHS:hover {
-        opacity: 0.05;
-        transition: ease 0.5s;
       }
 
       img {
@@ -54,8 +45,12 @@
       }
 
       img:hover {
-        opacity: 0.3;
+        opacity: 0;
         transition: ease 0.5s;
+      }
+
+      img::after {
+        content: "Hello there";
       }
 
       .container {
@@ -87,7 +82,26 @@
 
       a {
         height: 100%;
-        overflow: visible;
+        overflow-y: visible;
+      }
+
+      a p {
+        opacity: 0;
+        transition: ease 0.5s;
+        text-align: center;
+        margin: 10%;
+        color: #3766A2;
+      }
+
+      a:hover p {
+        opacity: 1;
+      }
+
+      .box {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
     </style>
@@ -106,26 +120,29 @@
         <div class="frame row" style="margin-top: 10px;">
           
 
-          <a class="box row-1" id="weather-or-not" href="https://www.weatherornot.today" target="_blank">
-            <p style="position: absolute; z-index: 0; opacity: 0;">Hello there</p>
+          <a class="box" id="weather-or-not" href="https://www.weatherornot.today" target="_blank">
+            <p style="position: absolute;">This is my final project for Le Wagon. I led a team to produce a weather personalised weather app. </p>
             <img src="images/weather-or-not.png" style="z-index: 10" style="height: 100%" />
           </a>
 
-          <a class="box row-1" id="MHS" href="#">
-            <div></div>
+          <a class="box" id="MHS" href="https://www.weatherornot.today" target="_blank" style="position: relative;">
+            <p style="position: absolute;">This is a marketing website I am building for a friend's business.  </p>
+            <img src="images/MHS.png" style="z-index: 10" style="height: 100%" />
           </a>
 
-          <a class="box row-2" id="project-flynn" href="https://flynncheney.com/" target="_blank" >
+          <a class="box row-2" id="project-flynn" href="https://flynncheney.com/" target="_blank" style="position: relative" >
+            <p style="position: absolute;">This is a small project for my nephew</p>
             <img src="images/project-nephew.png" style="border-radius: 15px;" />
           </a>
-
+          
           <a class="box" id="about-me" href="https://github.com/Samwisee" target="_blank">
-            <img src="images/sam-main.jpg" style="border-radius: 50%;" />
+            <img src="images/sam-main.jpg" style="border-radius: 50%; overflow: visible;" />
           </a >
 
-          <a class="box" id="linkedin" href="#" target="_blank">
+          <a class="box" id="linkedin" href="https://www.linkedin.com/in/samuel-cheney-6117aa37/" target="_blank">
             <img src="images/linkedin.png" />
           </a>
+
         </div>
       </div>
     </div>
