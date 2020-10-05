@@ -3,17 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sam Cheney's web design portfolio</title>
+    <title>Sam Cheney's web portfolio</title>
 
     <style>
       body {
         margin: 0;
         padding: 0;
-      }
-
-      nav {
-        background-color: #161616;
-        height: 30vh;
       }
 
       h1 {
@@ -71,13 +66,14 @@
         max-width: 600px;
         width: 90%;
         position: relative;
-        top: -200px;
+        top: -240px;
         margin: auto;
       }
 
       .frame {
         background-color: white;
         border: 10px white solid;
+        border-radius: 0 0 15px 15px;
         display: grid;
         grid-template-rows: auto auto auto;
         grid-template-columns: 1fr 1fr 1fr;
@@ -96,16 +92,16 @@
 
   </head>
   <body>
-    <div style="height: 30vh; background-color: #161616;">
+    <div style="height: 30vh; background-color: #161616; padding-bottom: 10vh;">
 
     </div>
     <div style="background-color: #3766A2; height: 100%; margin-top: 10px;">
       <div class="container grid-container">
         <div class="row" style="background-color: transparent; border: none;">
-          <p style="color: white; font-family: Arial, Helvetica, sans-serif; font-size: 50px">Sam <b>Cheney</b></p>
-          <p style="color: white; font-family: Arial, Helvetica, sans-serif;">_________Fullstack engineer</p>
+              <p style="color: white; font-family: Arial, Helvetica, sans-serif; font-size: 50px"><b>Sam </b>Cheney</p>
+              <p style="color: white; font-family: Arial, Helvetica, sans-serif;">_________Fullstack engineer</p>
         </div>
-        <div class="frame row" style="margin-top: 10px">
+        <div class="frame row" style="margin-top: 10px;">
           
           <a class="box row-1" id="weather-or-not" href="https://www.weatherornot.today" target="_blank">
           </a>
@@ -113,12 +109,12 @@
           <a class="box row-1" id="MHS" href="#">
             <div class="overlay"></div>
           </a>
-          <a class="box row-2" id="project-flynn" href="https://flynncheney.com/" target="_blank">
-            <img src="images/project-nephew.png" />
+          <a class="box row-2" id="project-flynn" href="https://flynncheney.com/" target="_blank" >
+            <img src="images/project-nephew.png" style="border-radius: 15px;" />
           </a>
 
-          <a class="box" id="about-me" href="#" target="_blank">
-            <img src="images/sam-main.jpg" />
+          <a class="box" id="about-me" href="https://github.com/Samwisee" target="_blank">
+            <img src="images/sam-main.jpg" style="border-radius: 50%;" />
           </a >
 
           <a class="box" id="linkedin" href="#" target="_blank">
