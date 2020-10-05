@@ -69,6 +69,7 @@
       .container {
         min-width: 200px;
         max-width: 600px;
+        width: 90%;
         position: relative;
         top: -200px;
         margin: auto;
@@ -83,20 +84,28 @@
         grid-gap: 10px;
       }
 
+      .row {
+        padding: 0;
+      }
+
+      p {
+        margin: 0;
+      }
+
     </style>
 
   </head>
   <body>
-    <nav>
-      
-    </nav>
+    <div style="height: 30vh; background-color: #161616;">
 
-    <div style="background-color: #3766A2; height: 100%">
+    </div>
+    <div style="background-color: #3766A2; height: 100%; margin-top: 10px;">
       <div class="container grid-container">
-        <div class="row" style="background-color: transparent; border: none; margin-bottom: 20px;">
+        <div class="row" style="background-color: transparent; border: none;">
           <p style="color: white; font-family: Arial, Helvetica, sans-serif; font-size: 50px">Sam <b>Cheney</b></p>
+          <p style="color: white; font-family: Arial, Helvetica, sans-serif;">Fullstack engineer</p>
         </div>
-        <div class="frame row">
+        <div class="frame row" style="margin-top: 10px">
           
           <a class="box row-1" id="weather-or-not" href="https://www.weatherornot.today" target="_blank">
           </a>
