@@ -27,6 +27,10 @@
         transition: ease 0.5s;
       }
 
+      #showme {
+        grid-column: span 3;;
+      }
+
       #weather-or-not:hover{
        
       }
@@ -257,12 +261,17 @@
     </div>
     <div style="background-color: #3766A2; height: 100%; margin-top: 10px;">
       <div class="container grid-container">
+
         <div class="row" style="background-color: transparent; border: none;">
           <p style="color: white; font-family: Arial, Helvetica, sans-serif; font-size: 50px"><b>Sam </b>Cheney</p>
           <p style="color: white; font-family: Arial, Helvetica, sans-serif; position: relative; left: 9px">________  fullstack engineer</p>
         </div>
         <div class="frame row" style="margin-top: 10px;">
           
+          <a class="box" id="showme" href="https://www.showme.band" target="_blank">
+            <p style="position: absolute;">This is a personal project to keep good quality concert videos in one place</p>
+            <img src="images/showme.png" style="z-index: 10" style=" width: 100%;" />
+          </a>
 
           <a class="box" id="weather-or-not" href="https://www.weatherornot.today" target="_blank">
             <p style="position: absolute;">This is my final project for Le Wagon. I led a team to produce a personalised weather app.<br/> (Currently rebuilding the backend) </p>
