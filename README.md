@@ -1,12 +1,3 @@
-# Sam Cheney's Portfolio
+# Sam Cheney portfolio
 
-Hey, thanks for checking out my developer portfolio!
-
-I have a few projects running in 2020, feel free to check them out
-
-## Weather or Not (current build unstable)
-
-## My Health Space
-
-## Project Nephew
-
+Static site (HTML and CSS, no build step) for samcheney.com. Edit index.html and style.css.

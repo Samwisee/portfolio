@@ -1,305 +1,226 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sam Cheney's web portfolio</title>
-    <link rel="shortcut icon" type="image" href="images/favicon.png" />
-
-    
-
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
-
-      h1 {
-        color: white;
-        margin: 0;
-        font-family: sans-serif;
-      }
-
-      #weather-or-not{
-        grid-column: span 3;
-        /* background-image: url('./images/weather-or-not.png'); */
-       
-        transition: ease 0.5s;
-      }
-
-      #showme {
-        grid-column: span 3;;
-      }
-
-      #weather-or-not:hover{
-       
-      }
-
-      #MHS {
-        transition: ease 0.5s;
-        grid-column: span 3;
-      }
-
-      #MHS:hover {
-      }
-
-      #linkedin:hover img {
-        opacity: 0.5;
-      }
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        transition: ease 0.5s;
-      }
-
-      img:hover {
-        opacity: 0;
-        transition: ease 0.5s;
-      }
-
-      img::after {
-        content: "Hello there";
-      }
-
-      .container {
-        min-width: 200px;
-        max-width: 600px;
-        width: 90%;
-        position: relative;
-        top: -240px;
-        margin: auto;
-      }
-
-      .frame {
-        background-color: white;
-        border: 10px white solid;
-        border-radius: 0 0 15px 15px;
-        display: grid;
-        grid-template-rows: auto auto auto;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 10px;
-      }
-
-      .row {
-        padding: 0;
-      }
-
-      p {
-        margin: 0;
-      }
-
-      a {
-        height: 100%;
-        overflow-y: visible;
-      }
-
-      a p {
-        opacity: 0;
-        transition: ease 0.5s;
-        text-align: center;
-        margin: 0 10%;
-        color: #3766A2;
-        line-height: 35px;
-        left: 0;
-        align-self: center;
-      }
-
-      a:hover p {
-        opacity: 1;
-      }
-
-      .box {
-        position: relative;
-        display: flex;
-        justify-content: center;
-      }
-
-      .spinner-wrapper {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #3766A2;
-        z-index: 999999;
-        display: flex;
-        align-items: center;
-        animation:spinner-wrapper 1s 1;
-        animation-delay: 2s;
-        animation-fill-mode: forwards;
-
-      }
-
-      @keyframes spinner-wrapper{
-        from {opacity :1; height:100%;}
-        to {opacity :0; height: 0;}
-      }
-
-      .sk-folding-cube {
-        margin: 20px auto;
-        width: 40px;
-        height: 40px;
-        position: relative;
-        -webkit-transform: rotateZ(45deg);
-                transform: rotateZ(45deg);
-      }
-
-      .sk-folding-cube .sk-cube {
-        float: left;
-        width: 50%;
-        height: 50%;
-        position: relative;
-        -webkit-transform: scale(1.1);
-            -ms-transform: scale(1.1);
-                transform: scale(1.1); 
-      }
-      .sk-folding-cube .sk-cube:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: white;
-        -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
-                animation: sk-foldCubeAngle 2.4s infinite linear both;
-        -webkit-transform-origin: 100% 100%;
-            -ms-transform-origin: 100% 100%;
-                transform-origin: 100% 100%;
-      }
-      .sk-folding-cube .sk-cube2 {
-        -webkit-transform: scale(1.1) rotateZ(90deg);
-                transform: scale(1.1) rotateZ(90deg);
-      }
-      .sk-folding-cube .sk-cube3 {
-        -webkit-transform: scale(1.1) rotateZ(180deg);
-                transform: scale(1.1) rotateZ(180deg);
-      }
-      .sk-folding-cube .sk-cube4 {
-        -webkit-transform: scale(1.1) rotateZ(270deg);
-                transform: scale(1.1) rotateZ(270deg);
-      }
-      .sk-folding-cube .sk-cube2:before {
-        -webkit-animation-delay: 0.3s;
-                animation-delay: 0.3s;
-      }
-      .sk-folding-cube .sk-cube3:before {
-        -webkit-animation-delay: 0.6s;
-                animation-delay: 0.6s; 
-      }
-      .sk-folding-cube .sk-cube4:before {
-        -webkit-animation-delay: 0.9s;
-                animation-delay: 0.9s;
-      }
-      @-webkit-keyframes sk-foldCubeAngle {
-        0%, 10% {
-          -webkit-transform: perspective(140px) rotateX(-180deg);
-                  transform: perspective(140px) rotateX(-180deg);
-          opacity: 0; 
-        } 25%, 75% {
-          -webkit-transform: perspective(140px) rotateX(0deg);
-                  transform: perspective(140px) rotateX(0deg);
-          opacity: 1; 
-        } 90%, 100% {
-          -webkit-transform: perspective(140px) rotateY(180deg);
-                  transform: perspective(140px) rotateY(180deg);
-          opacity: 0; 
-        } 
-      }
-
-      @keyframes sk-foldCubeAngle {
-        0%, 10% {
-          -webkit-transform: perspective(140px) rotateX(-180deg);
-                  transform: perspective(140px) rotateX(-180deg);
-          opacity: 0; 
-        } 25%, 75% {
-          -webkit-transform: perspective(140px) rotateX(0deg);
-                  transform: perspective(140px) rotateX(0deg);
-          opacity: 1; 
-        } 90%, 100% {
-          -webkit-transform: perspective(140px) rotateY(180deg);
-                  transform: perspective(140px) rotateY(180deg);
-          opacity: 0; 
-        }
-      }
-
-    </style>
-
-    <script>
-      $(document).ready(function() {
-      //Preloader
-      preloaderFadeOutTime = 500;
-      function hidePreloader() {
-        var preloader = $('.spinner-wrapper');
-        preloader.fadeOut(preloaderFadeOutTime);
-      }
-      hidePreloader();
-      });
-    </script>
-
-    <script> Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
-      console.log('images finished loading');});
-    </script>
-
-  </head>
-  <body>
-
-  <!--CSS Spinner-->
-  <div class="spinner-wrapper">
-    <div class="sk-folding-cube">
-      <div class="sk-cube1 sk-cube"></div>
-      <div class="sk-cube2 sk-cube"></div>
-      <div class="sk-cube4 sk-cube"></div>
-      <div class="sk-cube3 sk-cube"></div>
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sam Cheney | Mobile engineer and technical lead</title>
+<meta name="description" content="Sam Cheney is a mobile engineer and technical lead in Melbourne working in Kotlin and Flutter. Projects, the decisions behind them, and how he works.">
+<meta property="og:title" content="Sam Cheney | Mobile engineer and technical lead">
+<meta property="og:description" content="Kotlin and Flutter. A card game with a pure-Dart rules engine, an accessible design system, and the pipelines that keep them honest.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231f43e0'/%3E%3Ctext x='16' y='23' font-size='19' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3ESC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <header class="id">
+    <div>
+      <p class="role">Melbourne, Australia</p>
+      <h1>Sam Cheney</h1>
+      <p class="role">Mobile engineer and technical lead</p>
     </div>
-  </div>
-
-    <div style="height: 30vh; background-color: #161616; padding-bottom: 10vh;">
-
+    <p class="pitch">Five years building and releasing Android and Flutter apps, the last two leading engineers and talking to executives and regulators. I build side projects the way I would want a team to build them: small steps, checks that fail loudly, decisions written down.</p>
+    <nav aria-label="Sections">
+      <p class="label">On this page</p>
+      <ul class="nav">
+        <li><a href="#kings-court">The King's Court</a></li>
+        <li><a href="#follow-me-therapy">Follow Me Therapy</a></li>
+        <li><a href="#sage-connection">Sage Connection</a></li>
+        <li><a href="#how-i-work">How I work</a></li>
+        <li><a href="#work">Work history</a></li>
+      </ul>
+    </nav>
+    <div>
+      <p class="label">Find me</p>
+      <ul class="links">
+        <li><a href="https://github.com/Samwisee">github.com/Samwisee</a></li>
+        <li><a href="https://www.linkedin.com/in/samuel-cheney">linkedin.com/in/samuel-cheney</a></li>
+        <li><a href="mailto:samcheneyus@gmail.com">samcheneyus@gmail.com</a></li>
+      </ul>
     </div>
-    <div style="background-color: #3766A2; height: 100%; margin-top: 10px;">
-      <div class="container grid-container">
+  </header>
 
-        <div class="row" style="background-color: transparent; border: none;">
-          <p style="color: white; font-family: Arial, Helvetica, sans-serif; font-size: 50px"><b>Sam </b>Cheney</p>
-          <p style="color: white; font-family: Arial, Helvetica, sans-serif; position: relative; left: 9px">________  fullstack engineer</p>
+  <main>
+    <section id="kings-court" class="project" aria-labelledby="kc-h">
+      <div class="section-head">
+        <p class="label">Project · Flutter · Online and offline</p>
+        <h2 id="kc-h">The King's Court</h2>
+        <p class="lede">A cooperative trick-taking card game for two to six players. Everyone plays together: each round deals tasks, the court shares them out, and the round is won only if every task is done.</p>
+      </div>
+      <ul class="meta" aria-label="Technology">
+        <li>Flutter</li><li>Dart</li><li>GitHub Actions</li><li>GitHub Pages</li><li>Cloudflare Workers</li><li>Durable Objects</li><li>D1</li><li>Python</li>
+      </ul>
+      <div class="actions">
+        <a class="btn primary" href="https://samwisee.github.io/kings-court/">Play it in the browser</a>
+        <a class="btn" href="https://github.com/Samwisee/kings-court">Read the code</a>
+      </div>
+      <div class="prose">
+        <p>It started as a companion app for a card game I like and became the project where I test how far a Flutter codebase can be pushed toward real engineering discipline. It runs on the web for quick testing on a phone, has bots to fill empty seats, three skins, a tutorial, a bug-report button, and online rooms. A printed deck and box are generated from the same brand file as the app.</p>
+      </div>
+      <ul class="decisions">
+        <li>
+          <h3>The rules engine is plain Dart with no Flutter in it</h3>
+          <p><b>Why:</b> the same rules and the same bots have to run on a server for online play. A test reads every import in the project and fails if one points the wrong way between layers, so the boundary cannot erode quietly.</p>
+        </li>
+        <li>
+          <h3>Every move is an action that serialises to JSON, and all randomness comes from one seed</h3>
+          <p><b>Why:</b> a game replays exactly from its setup and its moves, a bug report carries enough to reproduce the bug, and two devices stay in step. A fake network that delays, reorders, duplicates and drops messages proves it.</p>
+        </li>
+        <li>
+          <h3>The bots play fair</h3>
+          <p><b>Why:</b> a bot that reads hidden hands is no use for balancing or for fun. Bots infer what is known about the other hands and sample plausible deals, and a test fails if a bot ever acts on a card it cannot see.</p>
+        </li>
+        <li>
+          <h3>CI is the build machine</h3>
+          <p><b>Why:</b> I often work in sessions with no Flutter SDK. Every branch runs a strict analyzer (any finding fails), the tests, 70 screenshots compared against a baseline, and a benchmark that fails a branch running 30% or more slower than main on both runs.</p>
+        </li>
+        <li>
+          <h3>The web build is the JavaScript one, not WebAssembly</h3>
+          <p><b>Why:</b> the WebAssembly build ran badly on iOS Safari, and I test on my phone.</p>
+        </li>
+        <li>
+          <h3>One Skin object, and a test that fails if a widget names a colour</h3>
+          <p><b>Why:</b> reskinning, including possible paid skins, then means writing a skin and never touching a widget.</p>
+        </li>
+        <li>
+          <h3>Versioned saves with a migration and a fixture for every version</h3>
+          <p><b>Why:</b> players keep their games across releases. A test loads every save format the game has ever written.</p>
+        </li>
+        <li>
+          <h3>A small Cloudflare Worker for bug reports and play data</h3>
+          <p><b>Why:</b> "Report a bug" in the game opens a GitHub issue with the full game state attached. Rounds people play are stored in D1 so bots can play thousands of rounds when the rules change and I can see what the task mix does to win rates. Sharing play data can be switched off in the menu.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="follow-me-therapy" class="project" aria-labelledby="fmt-h">
+      <div class="section-head">
+        <p class="label">Project · Web · Design system · App in progress</p>
+        <h2 id="fmt-h">Follow Me Therapy</h2>
+        <p class="lede">The website for a paediatric occupational therapy practice, and the design system behind it. The same tokens drive the site, the printable worksheets, a book and a Kotlin Multiplatform app.</p>
+      </div>
+      <ul class="meta" aria-label="Technology">
+        <li>HTML</li><li>CSS custom properties</li><li>JavaScript</li><li>Python build scripts</li><li>TypeScript components</li><li>Playwright</li><li>GitHub Actions</li><li>Kotlin Multiplatform</li>
+      </ul>
+      <div class="actions">
+        <a class="btn primary" href="https://followmetherapy.com.au">Visit the site</a>
+        <a class="btn" href="https://github.com/Samwisee/follow-me-therapy">Read the code</a>
+      </div>
+      <div class="prose">
+        <p>The practice owner works in accessibility, so the bar is WCAG 2.2 AAA, not AA. That shaped most of the engineering: the site is static and framework-free, and the interesting work is in the checks that keep every product consistent.</p>
+      </div>
+      <ul class="decisions">
+        <li>
+          <h3>Design tokens are the single source for every colour, font and size</h3>
+          <p><b>Why:</b> a JSON file builds the CSS variables, the component library and the app's Kotlin. A check fails the build on any colour, font size, radius or duration written by hand, so the website, worksheets and app cannot drift apart.</p>
+        </li>
+        <li>
+          <h3>Accessibility is a build gate, not an audit</h3>
+          <p><b>Why:</b> text must hold 7:1 contrast on its fill in every tone it is used in, targets are 44px, and an automated accessibility run must report no violations before anything is called done.</p>
+        </li>
+        <li>
+          <h3>Landing pages are generated from one Python file</h3>
+          <p><b>Why:</b> the local-service pages share content and structure. Editing one source avoids hand-edited copies diverging, and CI regenerates them whenever the design changes.</p>
+        </li>
+        <li>
+          <h3>Changes go to a preview branch first, linked by commit hash</h3>
+          <p><b>Why:</b> the practice owner reviews before anything is live. Preview links use the commit hash because the preview host caches branch URLs. Going live is a fast-forward of main.</p>
+        </li>
+        <li>
+          <h3>The link-preview image is rendered by CI from the site's own CSS</h3>
+          <p><b>Why:</b> chat apps cache share images by URL, so each render gets a content-hashed filename and every reference is updated, and the image can never fall out of date with the design.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="sage-connection" class="project" aria-labelledby="sc-h">
+      <div class="section-head">
+        <p class="label">Project · Web</p>
+        <h2 id="sc-h">Sage Connection</h2>
+        <p class="lede">A website for a community of experienced women who connect, support and empower one another.</p>
+      </div>
+      <ul class="meta" aria-label="Technology">
+        <li>HTML</li><li>CSS</li><li>JavaScript</li><li>GitHub Pages</li>
+      </ul>
+      <div class="actions">
+        <a class="btn" href="https://github.com/Samwisee/sage-synergy">Read the code</a>
+      </div>
+      <ul class="decisions">
+        <li>
+          <h3>One static page with no build step</h3>
+          <p><b>Why:</b> the people who run the community should be able to understand and change it. There is nothing to install and hosting is free.</p>
+        </li>
+        <li>
+          <h3>Content is visible without JavaScript</h3>
+          <p><b>Why:</b> scroll animations only switch on when a script adds a class to the page, so a failed script never leaves sections hidden.</p>
+        </li>
+        <li>
+          <h3>Team photos are compressed, lazy loaded and hidden until decoded</h3>
+          <p><b>Why:</b> the first version had images popping in as they arrived, which looked broken on slow connections.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="how-i-work" class="project" aria-labelledby="hw-h">
+      <div class="section-head">
+        <p class="label">Pipelines</p>
+        <h2 id="hw-h">How I work with AI agents</h2>
+        <p class="lede">I use AI coding agents every day, and I treat their output the way I would treat a new hire's: welcome, and checked.</p>
+      </div>
+      <ul class="decisions">
+        <li>
+          <h3>Each repository has a rules file the agent reads first</h3>
+          <p><b>Why:</b> it states the one rule (behaviour must not change unless it is meant to), the layer boundaries, how to run checks and the branch workflow. Never push to main without being told, and small commits of one sentence each.</p>
+        </li>
+        <li>
+          <h3>CI proves every change, nobody reads and hopes</h3>
+          <p><b>Why:</b> analyzer, tests, screenshot diffs and performance budgets turn "looks right" into a pass or fail. A red commit is fixed before anything else.</p>
+        </li>
+        <li>
+          <h3>Decisions are written down as they are made</h3>
+          <p><b>Why:</b> a decisions file records every call made without asking and every deliberate behaviour change, with the screenshots that explain it. A later session, or a person, can see why something is the way it is.</p>
+        </li>
+        <li>
+          <h3>A human reviews what ships</h3>
+          <p><b>Why:</b> at work I added AI to CI/CD, ticket writing and technical documents, and every output was reviewed by a person. The side projects follow the same rule.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="work" class="project" aria-labelledby="wk-h">
+      <div class="section-head">
+        <p class="label">Work history</p>
+        <h2 id="wk-h">Where I have done this for a living</h2>
+      </div>
+      <div class="work">
+        <div>
+          <p class="when">Jan 2025 to Jun 2026</p>
+          <h3>Technical Lead, The Lottery Corporation</h3>
+          <p>Led two concurrent Android and Flutter projects while still shipping code. Ran executive reporting from automated Jira data tied to cash burn.</p>
         </div>
-        <div class="frame row" style="margin-top: 10px;">
-          
-          <a class="box" id="showme" href="https://www.showme.band" target="_blank">
-            <p style="position: absolute;">After my time as an acoustic engineer, I developed a taste for high quality concerts. I built  Showme as personal project to keep good quality concert videos in one place. I am currently building a react-native version of this application.</p>
-            <img src="images/showme.png" style="z-index: 10" style=" width: 100%;" />
-          </a>
-
-          
-          <a class="box" id="MHS" href="https://myhealthspace.com.au/" target="_blank" style="position: relative;">
-            <p style="position: absolute;">During my This is a marketing website I am building for a friend's Occupational Therapy business.</p>
-            <img src="images/MHS.png" style="z-index: 10" style="height: 100%" />
-          </a>
-          
-          <a class="box" id="weather-or-not" href="https://www.weatherornot.today" target="_blank">
-            <p style="position: absolute;">This is my final project for Le Wagon. I led a team to produce a personalised weather app.<br/> (Currently rebuilding the backend) </p>
-            <img src="images/weather-or-not.png" style="z-index: 10" style="height: 100%" />
-          </a>
-          
-          <a class="box row-2" id="project-flynn" href="https://flynncheney.com/" target="_blank" style="position: relative" >
-            <p style="position: absolute;">I have a two year old nephew, so I built this animal guessing game for him.</p>
-            <img src="images/project-nephew.png" style="border-radius: 15px;" />
-          </a>
-          
-          <a class="box" id="about-me" href="https://github.com/Samwisee" target="_blank" style="position: relative;">
-            <img src="images/github.png" style="position: absolute;" />
-            <img src="images/sam-main.jpg" style="border-radius: 50%; overflow: visible; z-index: 2;" />
-          </a >
-
-          <a class="box" id="linkedin" href="https://www.linkedin.com/in/samuel-cheney-6117aa37/" target="_blank">
-            <img src="images/linkedin.png" />
-          </a>
-
+        <div>
+          <p class="when">Oct 2023 to Jan 2025</p>
+          <h3>Android and Flutter Engineer, The Lottery Corporation</h3>
+          <p>Built the linked Figma, Jira, Confluence, code and test documentation that let a new hire land a first pull request on day one.</p>
+        </div>
+        <div>
+          <p class="when">Sep 2021 to Sep 2023</p>
+          <h3>Android Developer, Arq Group</h3>
+          <p>Delivered mobile projects for a financial services client. Started and ran an onboarding program for first-time developers.</p>
+        </div>
+        <div>
+          <p class="when">Oct 2020 to Oct 2023</p>
+          <h3>Teaching Assistant, Le Wagon</h3>
+          <p>Part-time support for bootcamp students, and workshops for people who were not students.</p>
         </div>
       </div>
-    </div>
-  </body>
+    </section>
+  </main>
+
+  <footer>Built by hand. Static HTML and CSS, no tracking. Melbourne, Australia.</footer>
+</div>
+</body>
 </html>
